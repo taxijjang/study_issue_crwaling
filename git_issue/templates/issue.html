@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h1>현재 까지 올라와 등록 되어 있는 Issue</h1>
+
+{% for issue in issue.all %}
+    <p><a href = "{% url 'detail' issue_id=issue.id%}"> {{issue.issue}}</a></p>
+{% endfor %}
+
+{% endblock %}

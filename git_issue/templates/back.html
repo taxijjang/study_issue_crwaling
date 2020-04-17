@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1>{{issue.issue}} <a href = "{% url 'back' %}">back</a></h1>
+<h1>{{problems.id}}</h1>
+{% for problem in problems %}
+    <p>{{problem.question}}</p> 
+    <p><a href ={{problem.question_link}}>{{problem.question_link}}}</a></p>
+    <br>
+    <br>
+{% endfor %}
+
+{% endblock %}

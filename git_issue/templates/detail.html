@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h1>{{issue.issue}} <a href = "{% url 'back' %}">back</a></h1>
+<h1>{{questions.id}}</h1>
+{% for question in questions %}
+    <p>{{question.question}}</p> 
+    <p><a href ={{question.question_link}}>{{question.question_link}}</a></p>
+    <br>
+    <br>
+
+{% endfor %}
+<br><br><br><br><br><br>
+
+{% for customer in customers %}
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col">
+        <h2>{{customer.name}}</h2>
+        {% for solve in customer.solve_set.all %}
+        <p>★ {{solve.problem_solve}}</p>
+        
+        {% endfor %}
+      </div>
+    </div>
+</div> <!-- /container -->
+<br>
+<br>
+<br>
+{% endfor %}
+{% endblock %}
