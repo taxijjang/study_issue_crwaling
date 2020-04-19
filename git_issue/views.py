@@ -13,7 +13,7 @@ def home_page(request):
 
 # issue 나열 페이지
 def issue_page(request):
-    issue = Issue.objects
+    issue = Issue.objects.order_by('pk')
 
     sesson_2_url = "https://github.com/leewoongi/Algorithm/issues/"
 
@@ -30,7 +30,6 @@ def issue_crwaling(sesson_url):
 
     soup = BeautifulSoup(source, "html.parser")
     r = re.compile('issue_[0-9]+_link')
-    print(r)
     issue = (soup.find_all('a', {'id' : r}))
 
     for t in issue:
