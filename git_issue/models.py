@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Issue(models.Model):
-    issue = models.CharField(max_length=100)
+    issue = models.CharField(max_length=200)
 
     def __str__(self):
         return self.issue
 
 class Question(models.Model):
     issue = models.ForeignKey(Issue, on_delete=models.CASCADE)
-    question = models.CharField(max_length=100)
+    question = models.CharField(max_length=200)
     question_link = models.CharField(max_length=500)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class Question(models.Model):
 
 class Customer(models.Model):
     issue = models.ForeignKey(Issue, on_delete = models.CASCADE)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
