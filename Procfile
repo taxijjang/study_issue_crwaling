@@ -1,1 +1,1 @@
-web: gunicorn git_issue_project.wsgi --log-file-
+web: gunicorn git_issue_project.wsgi --log-file -
