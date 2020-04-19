@@ -1,1 +1,1 @@
-web: gunicorn myapi.wsgi
+web: gunicorn git_issue_project.wsgi --log-file-
